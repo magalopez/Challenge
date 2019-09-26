@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document 1</title>
+</head>
+<body>
+  <nav>
+    <ul id="main_nav">
+      <li><a href="#">home</a></li>
+      <li><a href="#">sample page</a></li>
+      <li><a href="#">products page</a>
+        <ul>
+          <li><a href="#">checkout</a></li>
+          <li><a href="#">transaction</a></li>
+          <li><a href="#">your account</a></li>
+        </ul>
+      </li>
+      <li><a href="#">tienda</a></li>
+      <li><a href="#">carro</a></li>
+      <li><a href="#">finalizar compra</a></li>
+      <li><a href="#">mi cuenta</a></li>     
+    </ul>
+  </nav>
+
+  <div id="main_div"> 
+    <p>test uno</p>
+    <div>
+      <ul>
+        <li><a href="">primer elemento</a>
+          <ul id="main-div-ul">
+            <li><a href="">hijo 1 del primer e</a></li>
+            <li><a href="">hijo 2 del primer e</a></li>
+            <li><a href="">hijo 3 con hijos</a>
+              <ul>
+                <li><a href="">unico hijo del hijo 3</a></li>
+              </ul>  
+            </li>
+          </ul>
+        </li>
+        <li><a href="">segundo elemento</a></li>
+      </ul>
+    </div>
+    <h1>test dos</h1>
+  </div> 
+
+  <button type="button" id="print_tree">Muestra Arbol DOM</button>
+  
+  <div id="root"></div>
+  
+  <!-- <script src="./app.js"></script> -->
+  <script src="./index.js"></script>
+</body>
+</html>
