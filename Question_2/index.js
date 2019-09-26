@@ -26,34 +26,36 @@ const productList = [{
   },
 ]
 
-console.log(productList);
+// console.log(productList);
 
 function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-const number1 = getRandomArbitrary(0, 4)
-const number2 = getRandomArbitrary(0, 4)
-const number3 = getRandomArbitrary(0, 4)
+let productImpression = []
 
-console.log('nums', number1, number2, number3)
-
-
-function sendProducts(array, opc1, opc2) {
-
-  const productImpression = [];
-  array.map((Element) => {
-
-  })
-
+function sendProducts(array) {
+  if (productImpression.length === 4) {
+    console.log('Ya se agregaron todo los productos');
+  } else {
+    let number1 = getRandomArbitrary(0, 4);
+    let number2 = getRandomArbitrary(0, 4);
+   
+    if (number1 !== number2) {
+      let opt1 = array[number1];
+      let opt2 = array[number2];
+      
+      if(productImpression.includes(opt1, opt2))
+      {
+        console.log('No se puede hacer el envio')
+      }
+      else
+      {
+        productImpression.push(opt1,opt2);
+      }
+    sendProducts(array);
+  }
 }
-
-
-
-
-
-const button = document.getElementById("send_print");
-
-button.addEventListener('click', function () {
-  sendProducts(productList);
-})
+console.log('productImpression',productImpression);
+}
+sendProducts(productList);

@@ -4,27 +4,28 @@
 
 const menu = document.querySelector('#main_nav')
 const test = document.querySelector('#main_div')
-console.log('menu', menu)
-console.log('test',test)
+// console.log('menu', menu)
+// console.log('test',test)
 
 const nodeTree = getNodeText(menu)
 console.log('tree', nodeTree.text);
 
 function getNodeText (nodes) {
-  if (nodes.hasChildNodes()) //determina nodos hijos 
+  if(!nodes)
   {
-    let children = []
-    for (let i=0; i< nodes.childNodes.length; i++)
-    {
-      children.push(getNodeText(nodes.childNodes[i])); //recursion
-    }
-   return {text : nodes.innerText}
-  } 
+    console.log('No hay nodos');
+  }
   else 
   {
-    return false 
+    const list = nodes.childNodes;
+    [].map.call(list, function (item) {
+      const children = getNodeText(item);
+      return children;
+    });
+
+    return {text: nodes.innerText}
   }
-} 
+}
 
 function showText (obj) {
   let string = obj.text
@@ -42,4 +43,3 @@ const button = document.getElementById("print_tree");
 button.addEventListener("click", function() {
   document.getElementById("root").innerHTML = showText(nodeTree);
   });
-  
